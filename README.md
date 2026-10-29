@@ -17,11 +17,19 @@ Repositório dedicado a estudos práticos, testes e experimentos utilizando o ec
 ```text
 python-lab/
 ├── examples/
+│   ├── README.md                      # Catálogo e guia de convenções para exemplos
 │   ├── generate-excel.py              # Script para geração de checklist veicular em Excel
 │   ├── generate-excel.md              # Guia passo a passo de execução
 │   └── Checklist_Entrega_Veiculo.xlsx # Planilha de exemplo gerada
+├── roadmap.md                         # Trilha completa de estudos (básico ao avançado)
 └── README.md
 ```
+
+---
+
+## 🗺️ Trilha de Estudos
+
+Para acompanhar a evolução dos tópicos de estudo e desafios práticos, acesse o nosso **[Roadmap de Estudos](roadmap.md)**. Para explorar os scripts práticos disponíveis, consulte o **[Catálogo de Exemplos](examples/README.md)**.
 
 ---
 
