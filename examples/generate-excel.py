@@ -1,6 +1,6 @@
+from pathlib import Path
 import openpyxl
 from openpyxl.styles import Font, PatternFill, Alignment, Border, Side
-from openpyxl.utils import get_column_letter
 from openpyxl.worksheet.datavalidation import DataValidation
 
 wb = openpyxl.Workbook()
@@ -14,8 +14,6 @@ ws1.views.sheetView[0].showGridLines = True
 HEADER_FILL = PatternFill(start_color="1F4E78", end_color="1F4E78", fill_type="solid")
 HEADER_FONT = Font(name="Calibri", size=11, bold=True, color="FFFFFF")
 TITLE_FONT = Font(name="Calibri", size=16, bold=True, color="1F4E78")
-SECTION_FILL = PatternFill(start_color="D9E1F2", end_color="D9E1F2", fill_type="solid")
-SECTION_FONT = Font(name="Calibri", size=11, bold=True, color="1F4E78")
 DATA_FONT = Font(name="Calibri", size=11)
 BOLD_FONT = Font(name="Calibri", size=11, bold=True)
 
@@ -112,8 +110,8 @@ for idx, (item, cat) in enumerate(checklist_items, start=start_row):
 end_row = start_row + len(checklist_items) - 1
 
 # Data Validation for Status & Conforme
-dv_status = DataValidation(type="list", formula1='"Excelente, Bom, Regular, Danificado, N/A"', allow_blank=True)
-dv_conf = DataValidation(type="list", formula1='"Sim, Não, N/A"', allow_blank=True)
+dv_status = DataValidation(type="list", formula1='"Excelente,Bom,Regular,Danificado,N/A"', allow_blank=True)
+dv_conf = DataValidation(type="list", formula1='"Sim,Não,N/A"', allow_blank=True)
 
 ws1.add_data_validation(dv_status)
 ws1.add_data_validation(dv_conf)
@@ -137,8 +135,6 @@ widths = {'A': 45, 'B': 18, 'C': 22, 'D': 20, 'E': 40}
 for col, width in widths.items():
     ws1.column_dimensions[col].width = width
 
-filename = "Checklist_Entrega_Veiculo_Corporativo.xlsx"
-wb.save(filename)
-print(f"FILE_CREATED: {filename}")
-
-FILE_CREATED: Checklist_Entrega_Veiculo_Corporativo.xlsx
+output_path = Path(__file__).resolve().parent / "Checklist_Entrega_Veiculo.xlsx"
+wb.save(output_path)
+print(f"FILE_CREATED: {output_path.name}")

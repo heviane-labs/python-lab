@@ -8,16 +8,6 @@ python --version
 
 # Se o comando acima não funcionar, tente:
 python3 --version
-
-# Verificação mais robusta
-if command -v python3 >/dev/null 2>&1; then
-    echo "Python encontrado: $(python3 --version 2>&1)"
-elif command -v python >/dev/null 2>&1; then
-    echo "Python encontrado: $(python --version 2>&1)"
-else
-    echo "Python não encontrado. Instale o Python 3 antes de continuar."
-    exit 1
-fi
 ```
 
 Se o Python não estiver instalado, instale a versão 3 e execute os passos abaixo novamente.
@@ -27,9 +17,9 @@ Se o Python não estiver instalado, instale a versão 3 e execute os passos abai
 pip install openpyxl
 
 # execute o script
-python gerar_checklist.py
+python examples/generate-excel.py
 ```
 
-O arquivo `Checklist_Entrega_Veiculo_Corporativo.xlsx` será criado imediatamente na mesma pasta.
+O arquivo `Checklist_Entrega_Veiculo.xlsx` será criado imediatamente na mesma pasta.
 
 ---
