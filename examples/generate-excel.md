@@ -1,5 +1,27 @@
 # Para obter a planilha
 
+Antes de executar o script, verifique se o Python está instalado e qual versão está disponível no seu ambiente:
+
+```bash
+# Verifica se o Python está instalado
+python --version
+
+# Se o comando acima não funcionar, tente:
+python3 --version
+
+# Verificação mais robusta
+if command -v python3 >/dev/null 2>&1; then
+    echo "Python encontrado: $(python3 --version 2>&1)"
+elif command -v python >/dev/null 2>&1; then
+    echo "Python encontrado: $(python --version 2>&1)"
+else
+    echo "Python não encontrado. Instale o Python 3 antes de continuar."
+    exit 1
+fi
+```
+
+Se o Python não estiver instalado, instale a versão 3 e execute os passos abaixo novamente.
+
 ```bash
 # Instale a biblioteca necessária
 pip install openpyxl
